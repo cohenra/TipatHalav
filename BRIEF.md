@@ -69,3 +69,26 @@ Static calculator on GH Pages — no user data storage detected. rotem לא נד
 - Brain hub update: `[[agency-brain]]` (rotem now listed under 💰 Specialists)
 
 ---
+
+
+## 🔒 Security Audit Propagation — 2026-05-12
+
+**Source:** `/sync-agency` after `2026-05-12` agency-wide security audit (see `~/Desktop/projects/MakeCompany/security-audit-skills-2026-05-12.md`).
+
+### Findings (agency-wide)
+- 0 CRITICAL · 0 backdoors · 0 spyware · 0 supply-chain attacks
+- 1 minor leak found: `kids-quest/output/frontend/.env.vercel.tmp` had an EXPIRED Vercel OIDC token. Removed from git history + force-pushed.
+- 3 MCP servers were unpinned → now pinned (notebooklm@2.0.0, openai@0.1.1, n8n@2.51.3)
+- `~/.claude/skills/gstack.bak/` deleted (10MB+ duplicates)
+
+### What this means for this client
+1. **`.gitignore` hardened** — all new clients (and existing ones via this update) now block `.env.vercel*`, `*.tmp`, `.vercel/`, firebase + AWS credential files. Append to current `.gitignore` if missing.
+2. **No action required for past commits** unless an env file is actively committed (run `git ls-files | grep -E '\.env|\.vercel'` to verify).
+3. **Quarterly audits** — next: 2026-08-12. Re-scan all skills + repos.
+
+### Where to look
+- Audit report: `~/Desktop/projects/MakeCompany/security-audit-skills-2026-05-12.md`
+- Security policy: `~/.claude/SECURITY-NOTES.md`
+- Brain hub: `[[agency-brain]]` (security note added in 2026-05-12 line)
+
+---

@@ -4,3 +4,18 @@ dist
 *.local
 .env
 .env.local
+
+
+# Vercel CLI temp files (may contain OIDC tokens)
+.env.vercel*
+.vercel/
+*.tmp
+
+# Common leak sources (added 2026-05-12 after audit)
+firebase-debug.log
+.firebase/
+aws-exports.js
+serviceAccountKey.json
+.aws/credentials
+.env.production
+.env.development
